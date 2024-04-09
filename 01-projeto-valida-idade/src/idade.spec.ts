@@ -77,3 +77,24 @@ test('ReceberIdadeInteiro_VerificarSeEhAdulto_RetornaIdadeInvalida', () => {
   // Assert - o acerto, a comparação
   expect(resultado).toEqual(retornoEsperado);
 });
+
+describe('ReceberIdadeInteiro_ValidacaoCompleta', () => {
+  // Arrange - Preparar dados
+  const entradasIdades = [
+    ['19', "Idade é válida"], 
+    ['abcd', "Idade é inválida"], 
+    ['150', "Idade é maior que idade máxima"],
+    ['8', "Pessoa não é adulta"]
+  ];
+
+  // Assert - o acerto, a comparação
+  test.each(entradasIdades)(
+    'Idade: %s, resultado: %s',
+    (entradaIdade, resultadoEsperado) => {
+      const idade = new Idade();
+      const resultado = idade.validaIdade(entradaIdade);
+
+      expect(resultado).toBe(resultadoEsperado);
+    }
+  );
+});
