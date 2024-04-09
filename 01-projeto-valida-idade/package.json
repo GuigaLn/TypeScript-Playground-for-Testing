@@ -6,11 +6,9 @@
   "scripts": {
     "test": "jest"
   },
-  "dependencies": {
-    "jest": "^29.7.0",
-    "ts-node": "^10.9.2"
-  },
   "devDependencies": {
+    "jest": "^29.7.0",
+    "ts-node": "^10.9.2",
     "@babel/core": "^7.24.4",
     "@babel/preset-env": "^7.24.4",
     "@babel/preset-typescript": "^7.24.1",
